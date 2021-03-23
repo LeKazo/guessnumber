@@ -1,8 +1,8 @@
 //#region Random Number Generator
 function randomNumberGenerator(randomNumber){
-    var randomNumber =  Math.floor(Math.random()*10+1);
+    var randomNumber =  Math.floor(Math.random()*20+1);
     console.log("Random Number is: " + randomNumber);
-    document.getElementById("theRandomNumber").innerHTML="The Number is: "+randomNumber;
+    document.getElementById("theRandomNumber").innerHTML="Guess the number: "+randomNumber;
     return randomNumber;
 }
 randomNumber = randomNumberGenerator();
@@ -10,7 +10,7 @@ randomNumber = randomNumberGenerator();
 
 var allGuesses = [];
 var playerScore = 0;
-
+//#region Score
 function myFunction(){
     var PlayerGuesses
     PlayerGuesses = document.getElementById("input").value;
@@ -31,7 +31,7 @@ function myFunction(){
     playerScore = playerScore + 5;
     } else{
     playerScore = playerScore - 2;
-    var text = "Score is going up!";
+    var text = "Score is going down!";
     document.getElementById("message").innerHTML = text;
     
     }
@@ -48,4 +48,9 @@ function click(){
     click++
     document.getElementById('click').innerHTML=click;
 }
+//#endregion
 
+document.getElementById("reset").onclick = function() {
+    document.getElementById("PlayerScore").innerHTML = "";
+    
+ };
